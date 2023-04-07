@@ -32,8 +32,7 @@ public class StepTracker {
             System.out.println("Вы ввели неверное число");
             return;}
 
-        MonthData monthData = monthToData[month]; /*Я предполагая, что неправильно объявила эти переменные,
-                                                       поэтому данные неверно сохраняются*/
+        MonthData monthData = monthToData[month];
         monthData.days[day - 1] = steps;
     }
 
