@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class StepTracker {
     Scanner scanner;
     MonthData[] monthToData = new MonthData[12];
@@ -8,44 +9,49 @@ public class StepTracker {
     StepTracker(Scanner scan) {
         scanner = scan;
 
-        for (int i = 0; i < monthToData.length; i++){
+        for (int i = 0; i < monthToData.length; i++) {
             monthToData[i] = new MonthData();
         }
     }
 
-    void addNewNumberStepsPerDay(){
+    void addNewNumberStepsPerDay() {
         System.out.println("Введите месяц:");
         int month = scanner.nextInt();
-        if(month < 1 || month > 12) {
+        if (month < 1 || month > 12) {
             System.out.println("Вы ввели неверное число");
-            return;}
+            return;
+        }
 
         System.out.println("Введите день: ");
         int day = scanner.nextInt();
-        if(day < 1 || day > 30){
+        if (day < 1 || day > 30) {
             System.out.println("Вы ввели неверное число");
-            return;}
+            return;
+        }
 
         System.out.println("Введите количество шагов:");
         int steps = scanner.nextInt();
-        if (steps < 0){
+        if (steps < 0) {
             System.out.println("Вы ввели неверное число");
-            return;}
+            return;
+        }
 
         MonthData monthData = monthToData[month];
         monthData.days[day - 1] = steps;
     }
 
-    void changeStepGoal(){
+    void changeStepGoal() {
         System.out.println("Введите цель шагов на день:");
         goalByStepPerDay = scanner.nextInt();
     }
-    void printStatistics(){
+
+    void printStatistics() {
         System.out.println("Введите месяц: ");
         int month = scanner.nextInt();
-        if(month < 1 || month > 12) {
+        if (month < 1 || month > 12) {
             System.out.println("Вы ввели неверное число");
-            return;}
+            return;
+        }
         MonthData monthData = monthToData[month];
         int sumSteps = monthData.sumStepsFromMonth();
         System.out.println("Количество пройденных шагов по дням: ");

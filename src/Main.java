@@ -7,7 +7,7 @@ public class Main {
 
         while (true) {
             printMenu();
-            int command = scanner.nextInt();
+            int command = scanner.nextInt(); //Проверила с вариантом число с пробелом и программа считывает комманду верно
             if(command == 1){
                 System.out.println("Выполняется команда 1");
                 stepTracker.addNewNumberStepsPerDay();
